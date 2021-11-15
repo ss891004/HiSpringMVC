@@ -1,0 +1,43 @@
+<html>
+<fieldset>
+    <legend>单文件上传</legend>
+    <form method="post" action="upload1.do" enctype="multipart/form-data">
+        文件：<input type="file" name="file1"><br/>
+        <input type="submit" value="提交">
+    </form>
+</fieldset>
+
+<fieldset>
+    <legend>多文件上传</legend>
+    <form method="post" action="upload2.do" enctype="multipart/form-data">
+        文件1：<input type="file" name="file1"><br/>
+        文件2：<input type="file" name="file2"><br/>
+        <input type="submit" value="提交">
+    </form>
+</fieldset>
+
+<fieldset>
+    <legend>通过MultipartHttpServletRequest处理文件上传</legend>
+    <form method="post" action="upload3.do" enctype="multipart/form-data">
+        姓名：<input name="name" value="路人"/> <br/>
+        年龄：<input name="age" value="30"/><br/>
+        文件1：<input type="file" name="file1"><br/>
+        文件2：<input type="file" name="file2"><br/>
+        <input type="submit" value="提交">
+    </form>
+</fieldset>
+
+<fieldset>
+    <legend>自定义对象接收多文件上传</legend>
+    <form method="post" action="upload4.do" enctype="multipart/form-data">
+        姓名：<input name="name" value="路人"/> <br/>
+        年龄：<input name="age" value="30"/><br/>
+        头像图片：<input name="headImg" type="file"/><br/>
+        多张身份证图片<br/>
+        <input name="idCardImg" type="file"/><br/>
+        <input name="idCardImg" type="file"/><br/>
+        <input type="submit" value="提交">
+    </form>
+</fieldset>
+
+</html>
