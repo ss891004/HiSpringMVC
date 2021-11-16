@@ -34,3 +34,25 @@ git push -u origin main
 21、接口调用利器RestTemplate
 
 ```
+
+
+##JSTL
+```text
+
+JSTL 核心标签
+标签	说明
+<c:out>	将表达式的结果输出到页面中，类似于 <％= ...％>
+<c:set>	在指定范围内设置变量或属性值
+<c:if>	类似于 Java if 语句，用于条件判断
+<c:choose>	类似于 Java switch 关键字，为 <c:when>和<c:otherwise> 的父标签
+<c:when>	<c:choose> 的子标签，用来判断条件是否成立
+<c:otherwise>	<c:choose> 的子标签，当所有的 <c:when> 标签判断为 false 时被执行
+<c:forEach>	类似于 Java for，用于迭代集合中的信息
+<c:forTokens>	类似于 Java split，用于分隔字符串
+<c:remove>	用于删除数据
+<c:catch>	用于捕获异常
+<c:import>	用来导入静态或动态文件
+<c:param>	用来传入参数
+<c:redirect>	用于将当前页面重定向至另一个 URL
+<c:url>	用于将 URL 格式化为一个字符串
+```
