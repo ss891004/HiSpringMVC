@@ -18,18 +18,20 @@
     </init-param>
     <!-- load-on-startup：表示web容器启动的时，当前对象创建的顺序，值越小初始化越早，大于等于0 -->
     <load-on-startup>0</load-on-startup>
+    <!-- 开启异步支持 -->
+    <async-supported>true</async-supported>
   </servlet>
   <servlet-mapping>
     <servlet-name>springmvc</servlet-name>
     <url-pattern>*.do</url-pattern>
   </servlet-mapping>
 
-
-
   <!-- 添加CharacterEncodingFilter过滤器，这个类中会对request和response设置表名，解决参数乱码问题 -->
   <filter>
     <filter-name>characterEncodingFilter</filter-name>
     <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+    <!-- 添加异步支持 -->
+    <async-supported>true</async-supported>
     <init-param>
       <param-name>encoding</param-name>
       <param-value>UTF-8</param-value>
@@ -48,8 +50,7 @@
   <filter-mapping>
     <filter-name>characterEncodingFilter</filter-name>
     <url-pattern>/*</url-pattern>
+    <dispatcher>REQUEST</dispatcher>
+    <dispatcher>ASYNC</dispatcher>
   </filter-mapping>
-
-
-
 </web-app>

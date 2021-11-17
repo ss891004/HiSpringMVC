@@ -13,7 +13,7 @@
 
 
     <!-- springmvc容器（也就是一个spring容器）会扫描指定包中的组件，将其注册到springmvc容器中 -->
-    <context:component-scan base-package="s01,s02,s03,s04,s05"/>
+    <context:component-scan base-package="s01,s02,s03,s04,s05,s06"/>
 
     <!-- 添加mvc注解驱动 -->
     <mvc:annotation-driven/>
