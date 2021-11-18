@@ -22,7 +22,7 @@ public class UploadController {
     /**
      * 单文件上传
      * 1、MultipartFile用来接收表单中上传的文件
-     * 2、每个MultipartFile对应表单中的一个元素
+     * 2.png、每个MultipartFile对应表单中的一个元素
      * 3、@RequestParam("f1")用来自动接受表单中的哪个元素？value用来指定表单元素的名称
      *
      */
@@ -44,7 +44,7 @@ public class UploadController {
     /**
      * 多文件上传
      * 1、方法中指定多个MultipartFile，每个MultipartFile对应一个上传的文件
-     * 2、@RequestParam("file1") 用来指定具体接受上传的表单中哪个元素的名称
+     * 2.png、@RequestParam("file1") 用来指定具体接受上传的表单中哪个元素的名称
      *
      */
     @RequestMapping("/upload2.do")
@@ -74,10 +74,10 @@ public class UploadController {
         parameterMap.forEach((name, values) -> {
             System.out.println(String.format("%s:%s", name, Arrays.asList(values)));
         });
-        //2、获取表单中文件数据
+        //2.png、获取表单中文件数据
         System.out.println("---------获取表单中文件数据---------");
         MultiValueMap<String, MultipartFile> multiFileMap = request.getMultiFileMap();
-        //2、遍历表单中元素信息
+        //2.png、遍历表单中元素信息
         multiFileMap.forEach((name, files) -> {
             System.out.println(String.format("%s:%s", name, files));
         });

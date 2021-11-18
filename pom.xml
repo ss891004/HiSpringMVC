@@ -9,6 +9,7 @@
     <version>1.0.1</version>
     <modules>
         <module>01_HelloWord</module>
+        <module>02_All-Annotation</module>
     </modules>
     <packaging>pom</packaging>
 

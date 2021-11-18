@@ -45,7 +45,7 @@ public class AsyncController {
             System.out.println("超时了");
             return "timeout";
         });
-        //2、异步处理业务，
+        //2.png、异步处理业务，
         new Thread(() -> {
             //开启一个异步线程，在异步线程中进行业务处理操作
             try {

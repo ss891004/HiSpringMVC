@@ -35,7 +35,7 @@ public class ReceiveParamController {
      * springmvc调用这个方法之前，会根据方法参数名称，请求中获取参数的值，将其传入
      * 过程：
      * 1、将request.getParameter("name")传递给方法的第1个参数name
-     * 2、将Integer.valueOf(request.getParameter("age"))传递给方法的第2个参数age
+     * 2.png、将Integer.valueOf(request.getParameter("age"))传递给方法的第2个参数age
      */
     @RequestMapping("/receiveparam/test2.do")
     public ModelAndView test2(String name, Integer age) {
@@ -53,7 +53,7 @@ public class ReceiveParamController {
      * 如果方法的参数名称和表单中的参数名称不一致的时候，可以通过 @RequestParam注解的value属性来指定表单中参数的名称
      * 比如：@RequestParam("pname") String name 接收 request.getParameter("pname") 的值
      * 1、将request.getParameter("pname")传递给方法的第1个参数name
-     * 2、将Integer.valueOf(request.getParameter("page"))传递给方法的第2个参数age
+     * 2.png、将Integer.valueOf(request.getParameter("page"))传递给方法的第2个参数age
      */
     @RequestMapping("/receiveparam/test3.do")
     public ModelAndView test3(@RequestParam("pname") String name,
@@ -122,7 +122,7 @@ public class ReceiveParamController {
 
     /**
      * 动态url：url中可以使用{变量名称}来表示动态的部分，{}包裹的部分可以替换为任意内容
-     * 比如：/receiveparam/{v1}/{v2}.do可以接受:/receiveparam/1/2.do、/receiveparam/路人/30.do 等等
+     * 比如：/receiveparam/{v1}/{v2}.do可以接受:/receiveparam/1/2.png.do、/receiveparam/路人/30.do 等等
      */
     @RequestMapping("/receiveparam/{v1}/{v2}.do")
     public ModelAndView test7(@PathVariable("v1") String p1, @PathVariable("v2") String p2) {

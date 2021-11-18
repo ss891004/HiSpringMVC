@@ -30,7 +30,7 @@ public class UserViewController {
     public ModelAndView list() {
         //1.创建ModelAndView
         ModelAndView modelAndView = new ModelAndView();
-        //2.将所有用户信息放到Model中
+        //2.png.将所有用户信息放到Model中
         modelAndView.addObject("userList", userDtoMap.values());
         //3.设置显示的页面
         modelAndView.setViewName("/WEB-INF/view/s05/list.jsp");

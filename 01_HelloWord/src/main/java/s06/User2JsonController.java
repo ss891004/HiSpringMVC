@@ -8,7 +8,7 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 @RestController
-@RequestMapping("/s06/2")
+@RequestMapping("/s06/2.png")
 public class User2JsonController {
     Map<Long, UserDto> userDtoMap = new ConcurrentHashMap<>();
     {
