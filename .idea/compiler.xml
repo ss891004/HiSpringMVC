@@ -8,7 +8,8 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="02_All-Annotation" />
-        <module name="01_HelloWord" />
+        <module name="01_HelloWorld" />
+        <module name="03_S-SM" />
       </profile>
     </annotationProcessing>
   </component>
