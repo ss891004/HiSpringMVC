@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/mvc
+       https://www.springframework.org/schema/mvc/spring-mvc.xsd
+       http://www.springframework.org/schema/context
+       https://www.springframework.org/schema/context/spring-context.xsd">
+
+
+    <!-- springmvc容器（也就是一个spring容器）会扫描指定包中的组件，将其注册到springmvc容器中 -->
+    <context:component-scan base-package="s01,s02,s03,s04,s05,s06,s23,s24,s25"/>
+    <context:component-scan base-package="s10.controller"/>
+    <context:component-scan base-package="s10.handle"/>
+
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/WEB-INF/view/"/>
+        <property name="suffix" value=".jsp"/>
+    </bean>
+
+    <!-- 添加mvc注解驱动 -->
+    <mvc:annotation-driven/>
+<!--
+1、加入<mvc:default-servlet-handler/>配置后，框架会创建DefaultServletHttpRequestHandler对象，这个对象会将请转发给tomcat的default这个servlet处理，所以静态资源就可以正常访问了
+2、注意：配置中的第1行<mvc:annotation-driven/>也必须加上，如果不加上，@RequestMapping的请求就无法处理了
+3、这种用法有个前提是，web容器中需要有default这个servlet，且这个servlet可以处理静态资源-->
+<!--    <mvc:default-servlet-handler/>-->
+
+    <!-- bean名称必须为multipartResolver -->
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <!--
+http上传的请求类型为multipart/form-data类型，springmvc内部需要为这种请求指定解析器，解析器的类型为org.springframework.web.multipart.MultipartResolver
+MultipartResolver 有2个实现类，这里我们使用 CommonsMultipartResolver 作为解析器来解析文件上传的http请求
+注意bean名称必须为multipartResolver
+
+两个比较有用的属性
+maxUploadSizePerFile：单个文件大小限制（byte）
+maxUploadSize：整个请求大小限制（byte）
+        -->
+        <property name="maxUploadSizePerFile" value="#{10*1024*1024}"/>
+        <property name="maxUploadSize" value="#{100*1024*1024}"/>
+    </bean>
+</beans>

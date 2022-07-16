@@ -7,10 +7,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="02_All-Annotation" />
-        <module name="01_HelloWorld" />
-        <module name="03_S-SM" />
+        <module name="Spring-SpringMVC" />
+        <module name="HiWorld" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="02_All-Annotation" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>

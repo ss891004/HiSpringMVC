@@ -1,0 +1,7 @@
+
+### 所有头都传递 (参数时请求头部分)
+GET http://localhost:8080/01_HelloWorld/s25/test1
+name: java
+age: 25
+header1: java
+Header1: spring
